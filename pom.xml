@@ -12,6 +12,7 @@
         <module>exam-shiro</module>
         <module>exam-web</module>
         <module>common</module>
+        <module>exam-gen</module>
     </modules>
 
     <properties>

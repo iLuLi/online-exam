@@ -10,16 +10,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Created by hp on 2017/4/10.
  */
 @Controller
 public class SysLoginController {
+
     @ResponseBody
     @RequestMapping(value = "sys/login", method = RequestMethod.POST)
-    public R login(String username, String password) {
+    public R login(String username, String password, HttpServletRequest request) {
         try {
             Subject subject = SecurityUtils.getSubject();
+            if (password == null) {
+                password = "admin";
+            }
             password = new Sha256Hash(password).toHex();
             System.out.println(password);
             UsernamePasswordToken token = new UsernamePasswordToken(username, password);
@@ -33,6 +39,13 @@ public class SysLoginController {
         }catch (AuthenticationException e) {
             return R.error("账户验证失败");
         }
+        return R.ok();
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "sys/login1", method = RequestMethod.POST)
+    public R login1() {
+
         return R.ok();
     }
 }
