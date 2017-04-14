@@ -13,6 +13,7 @@ public class Query extends LinkedHashMap<String, Object> {
     private int limit;
 
     public Query(Map<String, Object> map) {
+        this.putAll(map);
         this.page = Integer.parseInt(map.get("page").toString());
         this.limit = Integer.parseInt(map.get("limit").toString());
 
