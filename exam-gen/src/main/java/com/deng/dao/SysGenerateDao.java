@@ -9,11 +9,11 @@ import java.util.Map;
  */
 public interface SysGenerateDao {
 
-    List<Map<String, Object>> queryList(Map<String, Object> map);
+    List<Map<String, String>> queryList(Map<String, Object> map);
 
-    Map<String, Object> queryTable(String name);
+    Map<String, String> queryTable(String name);
 
-    List<Map<String, Object>> queryColumns(String name);
+    List<Map<String, String>> queryColumns(String name);
 
-    int queryTotal();
+    int queryTotal(Map<String, Object> map);
 }

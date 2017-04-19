@@ -1,6 +1,5 @@
 package com.deng.entity;
 
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -8,11 +7,11 @@ import java.util.List;
  */
 public class TableEntity {
     private String tableName;
-    private String engine;
     private String tableComment;
-    private Date createTime;
-
-    private List<ColumnEntity> cols;
+    private String className;
+    private String classname;
+    private ColumnEntity pk;
+    private List<ColumnEntity> columns;
 
     public String getTableName() {
         return tableName;
@@ -20,14 +19,6 @@ public class TableEntity {
 
     public void setTableName(String tableName) {
         this.tableName = tableName;
-    }
-
-    public String getEngine() {
-        return engine;
-    }
-
-    public void setEngine(String engine) {
-        this.engine = engine;
     }
 
     public String getTableComment() {
@@ -38,19 +29,35 @@ public class TableEntity {
         this.tableComment = tableComment;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public String getClassName() {
+        return className;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setClassName(String className) {
+        this.className = className;
     }
 
-    public List<ColumnEntity> getCols() {
-        return cols;
+    public String getClassname() {
+        return classname;
     }
 
-    public void setCols(List<ColumnEntity> cols) {
-        this.cols = cols;
+    public void setClassname(String classname) {
+        this.classname = classname;
+    }
+
+    public ColumnEntity getPk() {
+        return pk;
+    }
+
+    public void setPk(ColumnEntity pk) {
+        this.pk = pk;
+    }
+
+    public List<ColumnEntity> getColumns() {
+        return columns;
+    }
+
+    public void setColumns(List<ColumnEntity> columns) {
+        this.columns = columns;
     }
 }

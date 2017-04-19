@@ -7,6 +7,9 @@ public class ColumnEntity {
     private String columnName;
     private String dataType;
     private String columnComment;
+    private String attrName;
+    private String attrname;
+    private String extra;
 
     public String getColumnName() {
         return columnName;
@@ -30,5 +33,29 @@ public class ColumnEntity {
 
     public void setColumnComment(String columnComment) {
         this.columnComment = columnComment;
+    }
+
+    public String getAttrName() {
+        return attrName;
+    }
+
+    public void setAttrName(String attrName) {
+        this.attrName = attrName;
+    }
+
+    public String getAttrname() {
+        return attrname;
+    }
+
+    public void setAttrname(String attrname) {
+        this.attrname = attrname;
+    }
+
+    public String getExtra() {
+        return extra;
+    }
+
+    public void setExtra(String extra) {
+        this.extra = extra;
     }
 }
